@@ -128,9 +128,21 @@ button:hover
 }
 
 
+#modal-content
 {
-    font-size: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 30rem;
+    justify-content: center;
+    align-items: center;
+}
+#modal-content p 
+{
+    
+    font-size: 1.4rem;
     color: #4c6880;
     font-variant: small-caps;
-    text-align: center;
+    text-align: right;
+    padding: 1rem;
 }
