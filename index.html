@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title> Marise Machine's</title>
+</head>
+<body>
+    <div id="principal">
+        <p>Marises Machine</p>
+        <div id="container-card-principal"> 
+            <select name="select_opcao_base" id="select_opcao_base">
+                <option value="op_decimal"> Decimal </option>
+                <option value="op_octal"> Octal </option>
+                <option value="op_binario"> Binário</option>
+                <option value="op_hexa"> Hexadecimal</option>
+            </select>
+            <input id="input_numero_inicial" placeholder="DIGITE AQUI!" type="number">
+
+            <button onclick="fazerConversao()"> CONVERTER</button>
+            <div id="mensagem_resultado">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function fazerConversao()
+    {
+        let numeroInicial = Number(input_numero_inicial.value);
+        let baseInicial = select_opcao_base.value;
+
+        if (baseInicial == "op_decimal")
+        {
+            binario = numeroInicial.toString(2);
+            octal = numeroInicial.toString(8);
+            hexa = numeroInicial.toString(16);
+
+            mensagem_resultado.innerHTML = 
+            `
+                Binário
+                ${binario}
+                Octal 
+                ${octal}
+                Hexadecimal
+                ${hexa}
+            `;
+        }
+        else if(baseInicial == "op_octal")
+        {
+            let valorDecimal = parseInt(numeroInicial,8);
+
+            binario = valorDecimal.toString(2);
+            decimal = valorDecimal;
+            hexa = valorDecimal.toString(16);
+
+            mensagem_resultado.innerHTML = 
+            `
+                Binário
+                ${binario}
+                Decimal 
+                ${decimal}
+                Hexadecimal
+                ${hexa}
+            `;
+        }
+        else if(baseInicial == "op_binario")
+        {
+             let valorDecimal = parseInt(numeroInicial,2);
+
+            octal = valorDecimal.toString(8);
+            decimal = valorDecimal;
+            hexa = valorDecimal.toString(16);
+
+            mensagem_resultado.innerHTML =
+            `
+                Octal
+                ${octal}
+                <br>
+                Decimal 
+                ${decimal}
+                <br>
+                Hexadecimal
+                ${hexa}
+            `;
+        }
+        else if(baseInicial == "op_hexa")
+        {
+             let valorDecimal = parseInt(numeroInicial,16);
+
+            octal = valorDecimal.toString(8);
+            decimal = valorDecimal;
+            binario = valorDecimal.toString(2);
+
+            mensagem_resultado.innerHTML =
+            `
+                Octal
+                ${octal}
+                Decimal 
+                ${decimal}
+                Binário
+                ${binario}
+            `
+        }
+
+
+    }
+</script>
