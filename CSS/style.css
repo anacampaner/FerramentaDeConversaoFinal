@@ -73,6 +73,14 @@ input
 
 }
 
+/* para tirar as setas que vem por padrão no type number*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button 
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 input::placeholder
 {
     color: #f3f7fa;
@@ -102,3 +110,10 @@ button:hover
     
 }
 
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
