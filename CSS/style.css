@@ -20,57 +20,80 @@ p
     font-variant: small-caps;
 }
 
+#info 
+{
+    font-size: 1.5rem;
+    color: #4c6880;
+    font-variant: small-caps;
+    text-align: center;
+    
+}
+
 #container-card-principal
 {
 	display:flex;
 	flex-direction: column;
     justify-content: center;
     align-items: center;
-	padding: 2rem;
+	padding: 2.5rem;
 	border: 2px solid  #f3f7fa;
     border-radius: 2rem;
+    width: 20rem;
+    background-color: #f3f7fa;
+
+    box-shadow: -23px 5px 1px #000713 /* Adicionando sombra */
 }
 
 select
 {
-    background-color: #f3f7fa;
-    color: #4c6880;
+    background-color: #4c6880;
+    color: #f3f7fa;
     border: 2px solid #f3f7fa;
     border-radius: 2rem;
-    width: 10rem;
-    height: 2rem;
+    width: 11rem;
+    height: 3rem;
     text-align:  center;
-    margin: 1.5rem;
+    margin: 2rem;
+    font-size: 1rem;
 }
 
 input
 {
-    background-color: #f3f7fa;
+    background-color: #4c6880;
     border: none;
     border-radius: 2rem;
     width: 15rem;
-    height: 2rem;
-    color: #4c6880;
+    height: 2.5rem;
+    color: #f3f7fa;
     text-align: center;
+    
 
+}
+
+input::placeholder
+{
+    color: #f3f7fa;
 }
 
 button
 {
-    background-color: #f3f7fa;
-    color: #4c6880;
+    background-color: #4c6880;
+    color: #f3f7fa;
     border: none;
     border-radius: 2rem;
-    width: 15rem;
-    height: 2rem;
-    margin: 1.5rem;
+    width: 13rem;
+    height: 3rem;
+    margin-top: 5rem;
+    font-size: 1rem;
+    font-variant: small-caps;
     
 }
 
 button:hover
 {
-    background-color: #4c6880;
-    border: 2px solid #f3f7fa;
-    color: #fff;
+    background-color: #f3f7fa;
+    border: 3px solid #4c6880;
+    color: #4c6880;
     
 }
+
