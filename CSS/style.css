@@ -118,11 +118,17 @@ button:hover
 
 #modal
 {
+    display: none;
     background-color: #f3f7fa;
     box-shadow: 3px 3px 5px 1px #000713;
     padding: 2.5rem;
 	border: 2px solid  #f3f7fa;
     border-radius: 2rem;
+    
+}
+
+.modal-content
+{
     font-size: 1.6rem;
     color: #4c6880;
     font-variant: small-caps;
