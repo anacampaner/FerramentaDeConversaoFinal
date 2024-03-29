@@ -120,7 +120,7 @@ button:hover
 {
     display: none;
     background-color: #f3f7fa;
-    box-shadow: 3px 3px 5px 1px #000713;
+    box-shadow: 3px 3px 7px 2px #000713;
     padding: 2.5rem;
 	border: 2px solid  #f3f7fa;
     border-radius: 2rem;
@@ -131,6 +131,15 @@ button:hover
     z-index: 1001; /* Z-index maior que o fundo escuro para garantir que fique na frente */
     transition: opacity 0.3s, transform 0.3s; /* Transições suaves para opacidade e transformação */
     
+}
+
+#modal P
+{
+    font-size: 1.8rem;
+    color: #4c6880;
+    font-variant: small-caps;
+    text-align: center ;
+    padding: 1rem;
 }
 
 
@@ -165,3 +174,17 @@ button:hover
     display: none; /* Inicialmente oculto */
     transition: opacity 0.3s; /* Transição suave para a opacidade */
 }
+
+.close {
+    position: absolute;
+    top: 0.5rem;
+    left: 1.3rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #4c6880;
+}
+
+.close:hover {
+    color: #9c1d1d; 
+}
+

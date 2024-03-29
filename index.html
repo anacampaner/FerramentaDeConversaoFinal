@@ -21,15 +21,18 @@
             </select>
             <input id="input_numero_inicial" placeholder="DIGITE AQUI!" type="number">
 
-            <button onclick="fazerConversao()"> CONVERTER</button>
+            <button onclick="fazerConversao()"> CONVERTER </button>
             
         </div>
 
          <!-- Modal -->
          <div id="overlay">
             <div id="modal" class="modal">
+                <p id="titulo-modal"> RESULTADO DAS CONVERSÕES </p>
+
+                <span class="close" onclick="fecharModal()">&times;</span>
                 <div id="modal-content">
-                    <span class="close" onclick="fecharModal()">&times;</span>
+                    
                 </div>
             </div>
          </div>
@@ -56,7 +59,7 @@
         octal = valorInicialNaBaseDecimal.toString(8);
         hexadecimal = valorInicialNaBaseDecimal.toString(16);
 
-        // Exibe o overlay (fundo escuro)
+
         let overlay = document.getElementById("overlay");
         overlay.style.display = "block";
 
@@ -74,11 +77,14 @@
         <p>Hexadecimal: ${hexadecimal}</p>
         `;
 
-        function fecharModal()
+        function fecharModal() 
         {
-            overlay.style.display="none"
-            modal.style.display = "none";  
+        
+            overlay.style.display = "none"; 
+            modal.style.top = "-100%"; 
+            modal.style.display = "none"; 
         }
+
     }
 </script>
 
