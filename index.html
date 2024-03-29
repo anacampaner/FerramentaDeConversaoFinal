@@ -14,10 +14,10 @@
 
             <h id="info"> Selecione a base do número que quer converter</h>
             <select name="select_opcao_base" id="select_opcao_base">
-                <option value="op_decimal"> Decimal </option>
-                <option value="op_octal"> Octal </option>
-                <option value="op_binario"> Binário</option>
-                <option value="op_hexa"> Hexadecimal</option>
+                <option value="10"> Decimal </option>
+                <option value="8"> Octal </option>
+                <option value="2"> Binário</option>
+                <option value="16"> Hexadecimal</option>
             </select>
             <input id="input_numero_inicial" placeholder="DIGITE AQUI!" type="number">
 
@@ -32,84 +32,58 @@
 </html>
 
 <script>
+    //Função que converti os valores iniciais informados para as demais bases
     function fazerConversao()
     {
-        let numeroInicial = Number(input_numero_inicial.value);
-        let baseInicial = select_opcao_base.value;
+        //Declaração das váriaveis que guardarão os valores digitados pelo usuário 
+        let numeroInicialInformado = Number(input_numero_inicial.value);
+        let baseInicialInformada = Number(select_opcao_base.value);
 
-        if (baseInicial == "op_decimal")
-        {
-            binario = numeroInicial.toString(2);
-            octal = numeroInicial.toString(8);
-            hexa = numeroInicial.toString(16);
+        //Traz o numero informado para a base decimal ultilizando o método parseInt()
+        let valorInicialNaBaseDecimal = parseInt(numeroInicialInformado,baseInicialInformada);
 
-            mensagem_resultado.innerHTML = 
+        //Transforma o numero informado em cada uma das bases ultilizando o método toString()
+        decimal = valorInicialNaBaseDecimal;
+        binario = valorInicialNaBaseDecimal.toString(2);
+        octal = valorInicialNaBaseDecimal.toString(8);
+        hexadecimal = valorInicialNaBaseDecimal.toString(16);
+
+
+        //Imprime o resultado das conversões na tela ultilizando o innerHTML
+        mensagem_resultado.innerHTML = 
             `
+                Decimal
+                ${decimal}
                 Binário
                 ${binario}
                 Octal 
                 ${octal}
                 Hexadecimal
-                ${hexa}
+                ${hexadecimal}
             `;
-        }
-        else if(baseInicial == "op_octal")
-        {
-            let valorDecimal = parseInt(numeroInicial,8);
-
-            binario = valorDecimal.toString(2);
-            decimal = valorDecimal;
-            hexa = valorDecimal.toString(16);
-
-            mensagem_resultado.innerHTML = 
-            `
-                Binário
-                ${binario}
-                Decimal 
-                ${decimal}
-                Hexadecimal
-                ${hexa}
-            `;
-        }
-        else if(baseInicial == "op_binario")
-        {
-             let valorDecimal = parseInt(numeroInicial,2);
-
-            octal = valorDecimal.toString(8);
-            decimal = valorDecimal;
-            hexa = valorDecimal.toString(16);
-
-            mensagem_resultado.innerHTML =
-            `
-                Octal
-                ${octal}
-                <br>
-                Decimal 
-                ${decimal}
-                <br>
-                Hexadecimal
-                ${hexa}
-            `;
-        }
-        else if(baseInicial == "op_hexa")
-        {
-             let valorDecimal = parseInt(numeroInicial,16);
-
-            octal = valorDecimal.toString(8);
-            decimal = valorDecimal;
-            binario = valorDecimal.toString(2);
-
-            mensagem_resultado.innerHTML =
-            `
-                Octal
-                ${octal}
-                Decimal 
-                ${decimal}
-                Binário
-                ${binario}
-            `
-        }
-
-
     }
 </script>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
