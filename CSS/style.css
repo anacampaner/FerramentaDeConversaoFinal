@@ -40,14 +40,9 @@ p
     border-radius: 2rem;
     width: 20rem;
     background-color: #f3f7fa;
-    transition: transform 0.3s ease;
     box-shadow: 3px 3px 5px 1px #000713;
 }
 
-#container-card-principal:hover
-{
-    transform: scale(1.1);
-}
 
 select
 {
