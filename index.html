@@ -24,12 +24,17 @@
             <button onclick="fazerConversao()"> CONVERTER</button>
             
         </div>
+
          <!-- Modal -->
-         <div id="modal" class="modal">
-            <div id="modal-content">
-                <span class="close" onclick="fecharModal()">&times;</span>
+         <div id="overlay">
+            <div id="modal" class="modal">
+                <div id="modal-content">
+                    <span class="close" onclick="fecharModal()">&times;</span>
+                </div>
             </div>
-        </div>
+         </div>
+
+
     </div>
 </body>
 </html>
@@ -51,6 +56,10 @@
         octal = valorInicialNaBaseDecimal.toString(8);
         hexadecimal = valorInicialNaBaseDecimal.toString(16);
 
+        // Exibe o overlay (fundo escuro)
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "block";
+
         // Exibe o modal
         var modal = document.getElementById("modal");
         modal.style.display = "block";
@@ -67,6 +76,7 @@
 
         function fecharModal()
         {
+            overlay.style.display="none"
             modal.style.display = "none";  
         }
     }
