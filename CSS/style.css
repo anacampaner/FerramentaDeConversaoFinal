@@ -41,7 +41,7 @@ p
     width: 20rem;
     background-color: #f3f7fa;
 
-    box-shadow: -23px 5px 1px #000713 /* Adicionando sombra */
+    box-shadow: 3px 3px 5px 1px #000713;
 }
 
 select
@@ -81,11 +81,12 @@ button
     color: #f3f7fa;
     border: none;
     border-radius: 2rem;
-    width: 13rem;
-    height: 3rem;
+    width: 12rem;
+    height: 2.8rem;
     margin-top: 5rem;
     font-size: 1rem;
     font-variant: small-caps;
+    transition: transform 0.3s ease;
     
 }
 
@@ -94,6 +95,7 @@ button:hover
     background-color: #f3f7fa;
     border: 3px solid #4c6880;
     color: #4c6880;
+    transform: scale(1.1);
     
 }
 
