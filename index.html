@@ -24,8 +24,12 @@
             <button onclick="fazerConversao()"> CONVERTER</button>
             
         </div>
-
-        <div id="mensagem_resultado">
+         <!-- Modal -->
+         <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <div id="modal-content"></div>
+            </div>
         </div>
     </div>
 </body>
@@ -48,19 +52,32 @@
         octal = valorInicialNaBaseDecimal.toString(8);
         hexadecimal = valorInicialNaBaseDecimal.toString(16);
 
+        // Exibe o modal
+        var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+
+        // Insere o resultado das conversões no modal
+        var modalContent = document.getElementById("modal-content");
+        modalContent.innerHTML = `
+        <p>Decimal: ${decimal}</p>
+        <p>Binário: ${binario}</p>
+        <p>Octal: ${octal}</p>
+        <p>Hexadecimal: ${hexadecimal}</p>
+        `;
+
 
         //Imprime o resultado das conversões na tela ultilizando o innerHTML
-        mensagem_resultado.innerHTML = 
-            `
-                Decimal
-                ${decimal}
-                Binário
-                ${binario}
-                Octal 
-                ${octal}
-                Hexadecimal
-                ${hexadecimal}
-            `;
+        //mensagem_resultado.innerHTML = 
+            //`
+               // Decimal
+               // ${decimal}
+              //  Binário
+              //  ${binario}
+              //  Octal 
+              //  ${octal}
+              //  Hexadecimal
+              //  ${hexadecimal}
+            //`;
     }
 </script>
 
