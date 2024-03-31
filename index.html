@@ -64,11 +64,11 @@
         overlay.style.display = "block";
 
         // Exibe o modal
-        var modal = document.getElementById("modal");
+        let modal = document.getElementById("modal");
         modal.style.display = "block";
 
         // Insere o resultado das conversões no modal
-        var modalContent = document.getElementById("modal-content");
+        let modalContent = document.getElementById("modal-content");
         modalContent.innerHTML = 
         `
         <p>Decimal: ${decimal}</p>
@@ -76,15 +76,14 @@
         <p>Octal: ${octal}</p>
         <p>Hexadecimal: ${hexadecimal}</p>
         `;
+    }
 
-        function fecharModal() 
-        {
+    function fecharModal() 
+    {
         
-            overlay.style.display = "none"; 
-            modal.style.top = "-100%"; 
-            modal.style.display = "none"; 
-        }
-
+        overlay.style.display = "none"; 
+        modal.style.top = "-100%"; 
+        modal.style.display = "none"; 
     }
 </script>
 
