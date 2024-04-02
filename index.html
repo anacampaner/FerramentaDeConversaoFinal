@@ -19,7 +19,7 @@
                 <option value="2"> Binário</option>
                 <option value="16"> Hexadecimal</option>
             </select>
-            <input id="input_numero_inicial" placeholder="DIGITE AQUI!" type="number">
+            <input id="input_numero_inicial" placeholder="DIGITE AQUI!" type="text">
 
             <button onclick="fazerConversao()"> CONVERTER </button>
             
@@ -37,54 +37,72 @@
             </div>
          </div>
 
-
     </div>
 </body>
 </html>
 
 <script>
-    //Função que converti os valores iniciais informados para as demais bases
+    //Função que converti o valor inicial informado para as demais bases
     function fazerConversao()
     {
-        //Declaração das váriaveis que guardarão os valores digitados pelo usuário 
-        let numeroInicialInformado = Number(input_numero_inicial.value);
+        //Declaração das variáveis e atribuição dos valores digitados pelo usuário 
+        let numeroInicialInformado = input_numero_inicial.value;
         let baseInicialInformada = Number(select_opcao_base.value);
 
         //Traz o numero informado para a base decimal ultilizando o método parseInt()
         let valorInicialNaBaseDecimal = parseInt(numeroInicialInformado,baseInicialInformada);
 
+        //Verifica se o valor da base binária digitado é inválido e se for atribui o valor "false" a variável valorInicialNaBaseDecimal
+        if (baseInicialInformada == 2) 
+        {
+            // Verifica se a entrada contém apenas 0s e 1s ultilizando o método test()
+            if (!/^[01]+$/.test(numeroInicialInformado)) 
+            {
+                valorInicialNaBaseDecimal = false;
+            }
+        }
+
         //Transforma o numero informado em cada uma das bases ultilizando o método toString()
         decimal = valorInicialNaBaseDecimal;
         binario = valorInicialNaBaseDecimal.toString(2);
         octal = valorInicialNaBaseDecimal.toString(8);
-        hexadecimal = valorInicialNaBaseDecimal.toString(16);
+        hexadecimal = valorInicialNaBaseDecimal.toString(16).toUpperCase();
 
+        // Cria a variável de conteúdo do modal 
+        let modalContent = document.getElementById("modal-content");
 
+        //Insere o resultado das conversões ou a mensagem de erro no modal 
+        //se a variável valorInicialNaBaseDecimal armazenar "NaN" ou "false"
+        if (isNaN(valorInicialNaBaseDecimal) || valorInicialNaBaseDecimal == false) 
+        {
+            modalContent.innerHTML = `<p>O número informado não é válido para a base escolhida.</p>`;
+        } else 
+        {
+            modalContent.innerHTML = 
+            `
+                <p>Decimal: ${decimal}</p>
+                <p>Binário: ${binario}</p>
+                <p>Octal: ${octal}</p>
+                <p>Hexadecimal: ${hexadecimal}</p>
+            `;
+        }
+
+        // Cria a variável e exibi o "overlay"
         let overlay = document.getElementById("overlay");
         overlay.style.display = "block";
 
-        // Exibe o modal
+        // Cria a variável e exibe o modal
         let modal = document.getElementById("modal");
         modal.style.display = "block";
-
-        // Insere o resultado das conversões no modal
-        let modalContent = document.getElementById("modal-content");
-        modalContent.innerHTML = 
-        `
-        <p>Decimal: ${decimal}</p>
-        <p>Binário: ${binario}</p>
-        <p>Octal: ${octal}</p>
-        <p>Hexadecimal: ${hexadecimal}</p>
-        `;
     }
 
+    //Função que fecha o modal quando o "X" for clicado
     function fecharModal() 
     {
-        
-            overlay.style.display = "none"; 
-            modal.style.display = "none"; 
-            modalContent.style.display = "none";
+        overlay.style.display = "none"; 
+        modal.style.display = "none"; 
     }
+
 </script>
 
 
